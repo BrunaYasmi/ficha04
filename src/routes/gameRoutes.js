@@ -19,7 +19,7 @@
 
 import { Router } from "express";
 
-import { showHome,startGame} from "../controllers/gameController.js";
+import { showHome,startGame,showQuestion, submitAnswer} from "../controllers/gameController.js";
 
 const router = Router();
 
@@ -31,5 +31,13 @@ const router = Router();
 router.get("/", showHome);
 
 router.post("/start",startGame);
+/**
+ * GET / game
+ * Mostra a pergunta atual, as respostas e a 
+ * torre de prémios
+ */
+
+router.get("/game", showQuestion);
+router.get ("/answer", submitAnswer);
 
 export default router;
